@@ -7,10 +7,13 @@
 1. **Search for an item**:  
    Use the `/search_item` command followed by the name or ID of the item you want to look up. The bot will search the database and provide you with detailed information about the item.
 
-2. **Update an item**:  
+2. **Get item text**:  
+   Use `/get_item_text` command followed by the ID of the item. Bot will get item's texts and text ids for its info and skills.
+
+3. **Update an item**:  
    If an item has been updated in the game, or a new community translation is available, you can use the `/update_item` command to update the item interactively.
 
-3. **Update all game data**:  
+4. **Update all game data**:  
    Use `/update_data` to refresh all in-game data when there are updates in the game. This ensures that the bot has the most recent information.
 
 ## Access
@@ -29,6 +32,6 @@ This bot is not officially affiliated with [Houkai Gakuen 2](https://houkai2nd.m
 ## Credits
 Data download & extract: [hg2-data-extractor](https://github.com/xcvhmq33/hg2-data-extractor)
 
-Item parsing: [hg2-item-parser](https://github.com/quinckky/hg2-item-parser)
+Item parsing: [hg2-item-parser](https://github.com/xcvhmq33/hg2-item-parser)
 
 Translation API: [ggz.amaryllisworks](http://ggz.amaryllisworks.pw)
