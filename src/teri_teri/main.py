@@ -9,9 +9,9 @@ bot = commands.Bot(command_prefix="/", intents=discord.Intents.default())
 
 async def main() -> None:
     async with bot:
-        await bot.load_extension("teri_teri.cogs.base")
-        await bot.load_extension("teri_teri.cogs.equipdex")
-        await bot.load_extension("teri_teri.cogs.data_manager")
+        await bot.load_extension("cogs.base")
+        await bot.load_extension("cogs.equipdex")
+        await bot.load_extension("cogs.data_manager")
         await bot.start(settings.TOKEN)
 
 
