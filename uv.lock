@@ -923,9 +923,9 @@ dev = [
 requires-dist = [
     { name = "asyncpg", specifier = ">=0.30.0,<0.31.0" },
     { name = "discord-py", specifier = ">=2.4.0,<3.0.0" },
-    { name = "hg2-data-extractor", specifier = ">=0.5.1" },
+    { name = "hg2-data-extractor", specifier = ">=0.5.1,<0.6.0" },
     { name = "hg2-item-parser", specifier = ">=0.7.1,<0.8.0" },
-    { name = "pydantic-settings", specifier = ">=2.6.1" },
+    { name = "pydantic-settings", specifier = ">=2.6.1,<3.0.0" },
     { name = "sqlalchemy", specifier = ">=2.0.36,<3.0.0" },
 ]
 

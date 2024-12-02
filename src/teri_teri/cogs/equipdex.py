@@ -20,8 +20,26 @@ class Equipdex(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
 
-    @app_commands.command(name="search_item")
-    @app_commands.describe(query="Search for an item by title or id")
+    @app_commands.command(name="get_item_text", description="Get item text ids by item id")
+    async def get_item_text(self, interaction: discord.Interaction, item_id: int) -> None:
+        await interaction.response.defer()
+        async with Session() as session:
+            item = await crud.read_by_ingame_id(session, item_id)
+            if item is not None:
+                response = (
+                    f"**Item No.** {item.ingame_id}\n"
+                    f"**Title:** {item.title} [`{item.title_id}`]\n"
+                )
+                for i, skill in enumerate(item.skills):
+                    response += f"\n**Skill {i}**: {skill.title} [`{skill.title_id}`]\n"
+                    response += f"{skill.description_template} [`{skill.description_template_id}`]\n"
+
+                await interaction.followup.send(response)
+                return
+            
+        await interaction.followup.send(f"❌ **Item not found:** `{item_id}`")
+
+    @app_commands.command(name="search_item", description="Search for an item by title or id")
     async def search_item(self, interaction: discord.Interaction, query: str) -> None:
         await interaction.response.defer()
         async with Session() as session:
